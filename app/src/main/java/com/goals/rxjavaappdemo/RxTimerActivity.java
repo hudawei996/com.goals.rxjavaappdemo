@@ -61,6 +61,7 @@ public class RxTimerActivity extends AppCompatActivity implements View.OnClickLi
 
     private void start() {
         //interval（）是运行在computation Scheduler线程中的，因此需要转到主线程
+        //一样会触发很多次，使用单例模式可能会更好
         mSubscription =
                 Observable
                         .interval(1, TimeUnit.SECONDS)
